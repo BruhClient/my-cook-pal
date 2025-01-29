@@ -1,4 +1,4 @@
-import { LucideIcon } from "lucide-react";
+
 import { FunctionComponent } from "react";
 
 interface InfoCardProps {

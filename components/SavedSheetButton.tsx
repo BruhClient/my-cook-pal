@@ -1,7 +1,7 @@
 "use client"
 
-import { FunctionComponent, Suspense } from "react";
-import { Button, buttonVariants } from "./ui/button";
+import { FunctionComponent } from "react";
+import { buttonVariants } from "./ui/button";
 import { Bookmark } from "lucide-react";
 import {
     Sheet,

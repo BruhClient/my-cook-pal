@@ -1,23 +1,17 @@
 "use client"
 
-import { Recipe } from "@/types/recipe";
 import { FunctionComponent, useEffect, useRef } from "react";
-import { Card, CardContent } from "@/components/ui/card"
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel"
 import RecipeCard from "./RecipeCard";
 import { useInfiniteQuery } from "@tanstack/react-query";
-import { Button } from "./ui/button";
 import { queryRecipes } from "@/actions/searched-recipes";
 import {useIntersection} from "@mantine/hooks"
 import { Skeleton } from "./ui/skeleton";
 import { CircleAlert } from "lucide-react";
-import Searchbar from "./Searchbar";
 import { useSearchParams } from "next/navigation";
 
 interface SearchCarouselProps {

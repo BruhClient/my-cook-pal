@@ -1,12 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Jockey_One, Jua } from "next/font/google";
+import { Jockey_One, Jua } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import QueryProvider from "@/components/QueryClientProvider";
-import { Suspense } from "react";
-import RecommendedRecipes from "@/components/FeaturedRecipes";
-import { Skeleton } from "@/components/ui/skeleton";
 import Footer from "@/components/Footer";
 
 const jockeyOne = Jockey_One({
@@ -25,7 +22,7 @@ const jua = Jua({
 export const metadata: Metadata = {
   title: "My cook pal",
   description: "Coded and designed by Travis Ang",
-  
+
 };
 
 export default function RootLayout({

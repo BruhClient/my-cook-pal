@@ -1,6 +1,6 @@
 
 import { TopRecipe } from "@/types/recipe";
-import { cache, FunctionComponent } from "react";
+import { FunctionComponent } from "react";
 import FeaturedRecipeCard from "./FeaturedRecipeCard";
 
 

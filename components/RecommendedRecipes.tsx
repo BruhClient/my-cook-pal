@@ -1,5 +1,4 @@
 import { TopRecipe } from "@/types/recipe";
-import { useInfiniteQuery } from "@tanstack/react-query";
 import { FunctionComponent } from "react";
 import {
     Carousel,

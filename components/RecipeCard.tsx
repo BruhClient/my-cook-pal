@@ -1,8 +1,8 @@
-import { FunctionComponent } from "react";
+
 import { Card, CardDescription, CardTitle } from "./ui/card";
 import { Recipe } from "@/types/recipe";
 import Image from "next/image";
-import { Heart, RussianRuble, Star } from "lucide-react";
+import { Star } from "lucide-react";
 import InfoCard from "./RecipeInfoCard";
 import ViewRecipeButton from "./ViewRecipeButton";
 import SaveButton from "./SaveButton";

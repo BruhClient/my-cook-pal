@@ -9,14 +9,13 @@ import { Clock, Soup } from "lucide-react"
 import Image from "next/image"
 import { Suspense } from "react"
 
-interface RecipeDetailsPageProps {
-    params : { 
-        id : string 
-    }
-}
+type tParams = Promise<{ id: string }>;
+
  
-const RecipeDetailsPage = async ({params} :RecipeDetailsPageProps) => {
-    const {id} = await params
+const RecipeDetailsPage = async ( props :{params : tParams} ) => {
+    const { id } = await props.params;
+    
+    
     const recipe = await fetch(`https://api.spoonacular.com/recipes/${id}/information?includeNutrition=true&apiKey=${process.env.API_KEY}`,{next : {revalidate : 3600}})
                                .then((res) => res.json())
                                .then((data) => {
@@ -100,7 +99,7 @@ const RecipeDetailsPage = async ({params} :RecipeDetailsPageProps) => {
             <div className="flex justify-center items-center">
                 
                 <ul>
-                    {recipe.ingredients.map((ingredient) => <li>{ingredient}</li>)}
+                    {recipe.ingredients.map((ingredient,index) => <li key={index}>{ingredient}</li>)}
                 </ul>
             </div>
             <Separator />
