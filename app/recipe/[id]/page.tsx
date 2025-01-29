@@ -51,7 +51,7 @@ const RecipeDetailsPage = async ( props :{params : tParams} ) => {
                                ) as RecipeDetails
 
     
-    return ( <div className="flex justify-center ">
+    return ( <div className="flex justify-center flex-col items-center ">
         <div className="flex flex-col items-center max-w-[800px] gap-4 relative ">
             <BackButton className="absolute top-0 left-0 z-50" />
             <div className="relative">
@@ -116,11 +116,12 @@ const RecipeDetailsPage = async ( props :{params : tParams} ) => {
                 <SaveButton id={parseInt(id)} className="w-full" />
             </div>
             
-            <Suspense fallback={<Skeleton className="w-full px-3 h-[500px]"/>}>
-                <RecommendedRecipes id={id}/>
-            </Suspense>
+            
             
         </div>
+        <Suspense fallback={<Skeleton className="w-full px-3 h-[500px]"/>}>
+                <RecommendedRecipes id={id}/>
+            </Suspense>
         
 
        

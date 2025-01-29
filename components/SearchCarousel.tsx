@@ -74,6 +74,7 @@ const SearchCarousel: FunctionComponent<SearchCarouselProps> = () => {
         {searchParams.get("q") && !searchParams.get("category") ? `Search results for '${searchParams.get("q")}'` : ""}
         {!searchParams.get("q") && searchParams.get("category") ? `Search results for '' in ${searchParams.get("category")}` : ""}
       </div>
+
         
 
           
@@ -130,6 +131,11 @@ const SearchCarousel: FunctionComponent<SearchCarouselProps> = () => {
               
             
           </CarouselContent>
+
+          <div className="flex w-full items-center justify-center gap-16 mt-3">
+            <CarouselPrevious />
+            <CarouselNext />
+            </div>
           
           
           
