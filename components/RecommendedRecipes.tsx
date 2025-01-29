@@ -48,7 +48,7 @@ const RecommendedRecipes: FunctionComponent<RecommendedRecipesProps> = async ({i
 
     
 
-    return ( <Carousel className="w-screen px-2 py-3">
+    return ( <Carousel className="w-full px-2 py-3">
             <div className="flex flex-col items-center">
             <div className="text-2xl text-center">Similiar Recipes</div>
             <div className="bg-primary w-9 h-2 rounded-lg mb-3 "/>
@@ -59,9 +59,9 @@ const RecommendedRecipes: FunctionComponent<RecommendedRecipesProps> = async ({i
                 {recipes.map((recipe) => {
                     
                     return <CarouselItem key={recipe.id} className="md:basis-1/2 lg:basis-1/3 flex items-center justify-center">
-                              <div className="p-1">
+                              
                                 <FeaturedRecipeCard recipe={recipe}/>
-                              </div>
+                             
                             </CarouselItem>
                 })}
 

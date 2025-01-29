@@ -11,7 +11,7 @@ import SaveButton from "./SaveButton";
  
 const RecipeCard = ({recipe} : {recipe : Recipe}) => {
     
-    return ( <Card className="p-3 max-w-[400px] flex flex-col gap-2 shadow- w-full">
+    return ( <Card className="p-3 max-w-[400px] flex flex-col gap-2 shadow- w-full ">
        
         <Image src={recipe.image === undefined ? "/placeholder.jpg":recipe.image} alt="" width="0"
             height="0"

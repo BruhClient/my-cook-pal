@@ -68,7 +68,7 @@ const SearchCarousel: FunctionComponent<SearchCarouselProps> = () => {
 
     
     return ( <>
-            <Carousel className="w-screen px-2">
+            <Carousel className="w-full px-2">
       <div className="px-4 text-xl"> 
         {searchParams.get("q") && searchParams.get("category") ? `Search results for '${searchParams.get("q")}' in ${searchParams.get("category")}` : ""}
         {searchParams.get("q") && !searchParams.get("category") ? `Search results for '${searchParams.get("q")}'` : ""}
@@ -86,16 +86,16 @@ const SearchCarousel: FunctionComponent<SearchCarouselProps> = () => {
             
                     return (
                           <CarouselItem key={recipe.id} className="md:basis-1/2 lg:basis-1/3 flex items-center justify-center " ref={ref}>
-                              <div className="p-1">
+                              
                                 <RecipeCard recipe={recipe}/>
-                              </div>
+                              
                           </CarouselItem>
                       )
                   }
-                  return <CarouselItem key={recipe.id} className="md:basis-1/2 lg:basis-1/3 flex items-center justify-center">
-                            <div className="p-1">
+                  return <CarouselItem key={recipe.id} className="md:basis-1/2 lg:basis-1/3 flex items-center justify-center ">
+                            
                               <RecipeCard recipe={recipe}/>
-                            </div>
+                            
                           </CarouselItem>
               })}
 
@@ -130,10 +130,7 @@ const SearchCarousel: FunctionComponent<SearchCarouselProps> = () => {
               
             
           </CarouselContent>
-          <div className="flex w-full items-center justify-center gap-9">
-          <CarouselPrevious />
-          <CarouselNext/>
-          </div>
+          
           
           
         </Carousel>
