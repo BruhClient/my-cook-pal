@@ -112,7 +112,7 @@ const RecipeDetailsPage = async ( props :{params : tParams} ) => {
                 
                 <div dangerouslySetInnerHTML={{ __html: recipe.summary }} />
             </div>
-            <SaveButton id={parseInt(id)} className="w-full" />
+            <SaveButton id={parseInt(id)} className="w-full px-4" />
             <Suspense fallback={<Skeleton className="w-full px-3 h-[500px]"/>}>
                 <RecommendedRecipes id={id}/>
             </Suspense>
