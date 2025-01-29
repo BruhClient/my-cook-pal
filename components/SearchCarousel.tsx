@@ -5,6 +5,8 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
 } from "@/components/ui/carousel"
 import RecipeCard from "./RecipeCard";
 import { useInfiniteQuery } from "@tanstack/react-query";
@@ -74,6 +76,9 @@ const SearchCarousel: FunctionComponent<SearchCarouselProps> = () => {
       </div>
         
 
+          
+          
+          
 
           <CarouselContent>
               {recipes.map((recipe,index) => {
@@ -125,6 +130,11 @@ const SearchCarousel: FunctionComponent<SearchCarouselProps> = () => {
               
             
           </CarouselContent>
+          <div className="flex w-full items-center justify-center gap-9">
+          <CarouselPrevious />
+          <CarouselNext/>
+          </div>
+          
           
         </Carousel>
         {recipes.length === 0 && !isFetching ? <div className="flex flex-col justify-center items-center h-[400px] gap-3">

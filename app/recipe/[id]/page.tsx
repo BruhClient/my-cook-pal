@@ -96,7 +96,7 @@ const RecipeDetailsPage = async ( props :{params : tParams} ) => {
                 Posted by <span className="text-primary">{recipe.credits}</span>
             </div>
             <Separator />
-            <div className="flex justify-center items-center">
+            <div className="px-4">
                 
                 <ul>
                     {recipe.ingredients.map((ingredient,index) => <li key={index}>{ingredient}</li>)}
