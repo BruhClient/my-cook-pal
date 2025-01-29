@@ -1,0 +1,1 @@
+export const DEFAULT_REFETCH_LIMIT = 10
