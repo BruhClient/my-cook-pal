@@ -4,6 +4,8 @@ import {
     Carousel,
     CarouselContent,
     CarouselItem,
+    CarouselNext,
+    CarouselPrevious,
   } from "@/components/ui/carousel"
 import FeaturedRecipeCard from "./FeaturedRecipeCard";
 
@@ -46,8 +48,11 @@ const RecommendedRecipes: FunctionComponent<RecommendedRecipesProps> = async ({i
 
     
 
-    return ( <Carousel className="w-screen px-2">
-      
+    return ( <Carousel className="w-screen px-2 py-3">
+            <div className="flex flex-col items-center">
+            <div className="text-2xl text-center">Similiar Recipes</div>
+            <div className="bg-primary w-9 h-2 rounded-lg mb-3 "/>
+            </div>
   
         
             <CarouselContent>
@@ -59,11 +64,20 @@ const RecommendedRecipes: FunctionComponent<RecommendedRecipesProps> = async ({i
                               </div>
                             </CarouselItem>
                 })}
+
+
   
                 
                 
               
             </CarouselContent>
+
+            <div className="flex w-full items-center justify-center gap-16 mt-3">
+            <CarouselPrevious />
+            <CarouselNext />
+            </div>
+            
+
             
           </Carousel> );
 }

@@ -29,7 +29,7 @@ const SearchCarousel: FunctionComponent<SearchCarouselProps> = () => {
 
   const {ref,entry} = useIntersection({ 
     root: lastRecipeRef.current, 
-    threshold : 1
+    threshold : 0.5
 })
     const {data,fetchNextPage,hasNextPage,isFetching} = useInfiniteQuery({
       queryKey:['Infinite Query' , searchParams.get("category"),searchParams.get("q")], 
