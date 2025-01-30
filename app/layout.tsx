@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import QueryProvider from "@/components/QueryClientProvider";
 import Footer from "@/components/Footer";
+import Head from "next/head";
 
 const jockeyOne = Jockey_One({
   weight :["400"],
@@ -33,6 +34,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+
+      <Head>
+        <link rel="icon" href="/favicon.svg" />
+      </Head>
       <body
         className={`${jockeyOne.variable} ${jua.variable} font-jua antialiased`}
       >
