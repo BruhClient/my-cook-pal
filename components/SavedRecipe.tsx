@@ -35,8 +35,6 @@ const SavedRecipeCard: FunctionComponent<SavedRecipeCardProps> = ({id}) => {
         return <Skeleton className="w-full h-[500px]"/>
     }
 
-
-    console.log(recipe)
             
 
 
