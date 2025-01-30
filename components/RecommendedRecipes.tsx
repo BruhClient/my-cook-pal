@@ -48,7 +48,7 @@ const RecommendedRecipes: FunctionComponent<RecommendedRecipesProps> = async ({i
 
     
 
-    return ( <Carousel className="w-full px-2 py-3">
+    return ( <Carousel className="w-full px-2 py-9">
             <div className="flex flex-col items-center">
             <div className="text-2xl text-center">Similiar Recipes</div>
             <div className="bg-primary w-9 h-2 rounded-lg mb-3 "/>

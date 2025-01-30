@@ -22,6 +22,7 @@ const jua = Jua({
 export const metadata: Metadata = {
   title: "My cook pal",
   description: "Coded and designed by Travis Ang",
+  keywords : ["NextJs" , "TypeScript","JavaScript"]
 
 };
 
