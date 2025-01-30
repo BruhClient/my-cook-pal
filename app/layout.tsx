@@ -22,6 +22,9 @@ const jua = Jua({
 
 export const metadata: Metadata = {
   title: "My cook pal",
+  icons :{
+    icon : "/favicon.svg"
+  },
   description: "Coded and designed by Travis Ang",
   keywords : ["NextJs" , "TypeScript","JavaScript"], 
   metadataBase : new URL("https://my-cook-pal.vercel.app"), 
