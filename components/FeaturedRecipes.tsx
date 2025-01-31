@@ -39,14 +39,14 @@ const FeaturedRecipes: FunctionComponent<FeaturedRecipesProps> = async ({tags,ti
 
     
     return ( 
-    <div className="mt-5 flex flex-col items-center">
+    <div className="mt-5 flex flex-col items-center ">
         <div className="flex flex-col items-center">
             <div className="text-2xl text-center">{title}</div>
             <div className="bg-primary w-9 h-2 rounded-lg mb-3 "/>
         </div>
 
 
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-3 w-fit">
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-3 overflow-hidden ">
         {
             recipes.map((recipe) => { 
                 return <FeaturedRecipeCard recipe={recipe} key={recipe.id}/>
