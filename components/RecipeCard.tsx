@@ -20,8 +20,8 @@ const AnimatePresenceVariants = {
 const RecipeCard = ({recipe} : {recipe : Recipe}) => {
     
     return ( 
-        <motion.div variants={AnimatePresenceVariants} initial="hidden" whileInView="visible" viewport={{once : true}}>
-            <Card className="p-3 max-w-[400px] flex flex-col gap-2 shadow- w-full ">
+        <motion.div variants={AnimatePresenceVariants} initial="hidden" whileInView="visible" viewport={{once : true}} className="max-w-[400px]">
+            <Card className="p-3 w-full flex flex-col gap-2 shadow-md ">
        
                     <Image src={recipe.image === undefined ? "/placeholder.jpg":recipe.image} alt="" width="0"
                         height="0"
