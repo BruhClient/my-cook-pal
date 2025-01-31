@@ -72,8 +72,8 @@ const Searchbar = () => {
                     <SelectItem value="All">All</SelectItem>
                     <SelectItem value="French">French</SelectItem>
                     <SelectItem value="Indian">Indian</SelectItem>
-                    <SelectItem value="Spanish">British</SelectItem>
-                    <SelectItem value="British">Spanish</SelectItem>
+                    <SelectItem value="British">British</SelectItem>
+                    <SelectItem value="Spanish">Spanish</SelectItem>
                     <SelectItem value="Chinese">Chinese</SelectItem>
                     <SelectItem value="Mexican">Mexican</SelectItem>
                     </SelectGroup>

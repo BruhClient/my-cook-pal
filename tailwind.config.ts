@@ -10,7 +10,7 @@ export default {
   theme: {
   	extend: {
 		fontFamily : { 
-			"jockey" : "var(--font-jockey)",
+		
 			"jua" : "var(--font-jua)"
 		},
   		colors: {

@@ -15,12 +15,37 @@ import {useIntersection} from "@mantine/hooks"
 import { Skeleton } from "./ui/skeleton";
 import { CircleAlert } from "lucide-react";
 import { useSearchParams } from "next/navigation";
+import {AnimatePresence, delay, motion} from "motion/react"
 
 interface SearchCarouselProps {
     
 }
  
 
+
+const commonVariants = {
+  hidden : { 
+    x : -100 , 
+    opacity : 0, 
+  }, 
+  visible : { 
+    x : 0, 
+    opacity : 1,
+    transition : { 
+      type : "spring" , 
+      stiffness : 200 ,
+       
+      
+    }
+  }
+}
+
+const AnimatePresenceVariants = {
+
+  visible : { x: 0, opacity: 1 }, 
+  hidden : { x: 300, opacity: 0 } ,
+  exit : { x: -300, opacity: 0 }
+}
 
 const SearchCarousel: FunctionComponent<SearchCarouselProps> = () => {
   const lastRecipeRef = useRef<HTMLDivElement>(null)
@@ -69,11 +94,11 @@ const SearchCarousel: FunctionComponent<SearchCarouselProps> = () => {
     
     return ( <>
             <Carousel className="w-full px-2">
-      <div className="px-4 text-xl"> 
+      {(searchParams.get("q") || searchParams.get("category")) && <motion.div className="p-4 text-xl" variants={commonVariants} initial="hidden" animate="visible"> 
         {searchParams.get("q") && searchParams.get("category") ? `Search results for '${searchParams.get("q")}' in ${searchParams.get("category")}` : ""}
         {searchParams.get("q") && !searchParams.get("category") ? `Search results for '${searchParams.get("q")}'` : ""}
         {!searchParams.get("q") && searchParams.get("category") ? `Search results for '' in ${searchParams.get("category")}` : ""}
-      </div>
+      </motion.div>}
 
         
 
@@ -82,30 +107,39 @@ const SearchCarousel: FunctionComponent<SearchCarouselProps> = () => {
           
 
           <CarouselContent>
+            <AnimatePresence mode="wait">
               {recipes.map((recipe,index) => {
                   if (index === recipes.length-1 ) { 
             
                     return (
                           <CarouselItem key={recipe.id} className="md:basis-1/2 lg:basis-1/3 flex items-center justify-center " ref={ref}>
-                              
+                              <motion.div variants={AnimatePresenceVariants} initial="hidden" animate="visible" exit="exit">
                                 <RecipeCard recipe={recipe}/>
+                              </motion.div>
+                                
                               
                           </CarouselItem>
                       )
                   }
                   return <CarouselItem key={recipe.id} className="md:basis-1/2 lg:basis-1/3 flex items-center justify-center ">
-                            
-                              <RecipeCard recipe={recipe}/>
+                              <motion.div variants={AnimatePresenceVariants} initial="hidden" animate="visible" exit="exit" >
+                                <RecipeCard recipe={recipe} />
+                              </motion.div>
+                              
                             
                           </CarouselItem>
               })}
 
+        </AnimatePresence>
+
+ 
+
               {isFetching ? 
               <>
               <CarouselItem className="md:basis-1/2 lg:basis-1/3 flex items-center justify-center">
-              <div className="p-1">
+              <motion.div className="p-1">
                 <Skeleton className="w-[400px] h-[500px]"/>
-              </div>
+              </motion.div>
                 
               </CarouselItem>
 

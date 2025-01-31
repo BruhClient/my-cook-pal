@@ -14,11 +14,19 @@ import {
 import { cn } from "@/lib/utils";
 import { useLocalStorage } from "@mantine/hooks";
 import SavedRecipeCard from "./SavedRecipe";
+import { AnimatePresence,motion } from "motion/react";
 
 interface SavedSheetButtonProps {
 
     className? : string
 
+}
+
+const AnimatePresenceVariants = {
+
+  visible : { x: 0, opacity: 1 }, 
+  hidden : { x: 300, opacity: 0 } ,
+  exit : { x: -300, opacity: 0 }
 }
  
 const SavedSheetButton: FunctionComponent<SavedSheetButtonProps> = ({className}) => {
@@ -41,13 +49,17 @@ const SavedSheetButton: FunctionComponent<SavedSheetButtonProps> = ({className})
             </SheetDescription>
           </SheetHeader>
           <div className="flex flex-col overflow-scroll h-full items-center pt-4 pb-14 gap-3">
+            <AnimatePresence>
             {
                 value.map((id :string) => 
-                    
-                        <SavedRecipeCard id={id} key={id}/>
+                      <motion.div variants={AnimatePresenceVariants} initial="hidden" animate="visible" exit="exit"  key={id}>
+                          <SavedRecipeCard id={id}/>
+                      </motion.div>
+                        
             
                 )
             }
+            </AnimatePresence>
           </div>
           
         </SheetContent>

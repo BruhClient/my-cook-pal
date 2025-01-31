@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import { ModeToggle } from "./ModeToggle";
 import SavedSheetButton from "./SavedSheetButton";
-
+import {motion} from "motion/react"
  
 const Navbar  = () => {
 
@@ -13,9 +13,9 @@ const Navbar  = () => {
             <div className="bg-primary h-16 aspect-square rounded-full overflow-visible">
                 
             </div>
-            <div className="relative right-12 text-2xl font-jockey">
+            <motion.div className="relative right-12 font-jua text-xl" animate={{  opacity : 1, y:0 }} initial={{opacity:0,y:-30}}>
                 my cook pal
-            </div>
+            </motion.div>
             
         </div>
         <div className="flex flex-col gap-2 items-center">

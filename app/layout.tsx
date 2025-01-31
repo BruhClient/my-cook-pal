@@ -7,11 +7,6 @@ import QueryProvider from "@/components/QueryClientProvider";
 import Footer from "@/components/Footer";
 
 
-const jockeyOne = Jockey_One({
-  weight :["400"],
-  subsets:["latin"] ,  
-  variable : "--font-jockey" , 
-})
 
 const jua = Jua({
   weight :["400"],
@@ -59,7 +54,7 @@ export default function RootLayout({
 
      
       <body
-        className={`${jockeyOne.variable} ${jua.variable} font-jua antialiased`}
+        className={`${jua.variable} font-jua antialiased`}
       >
         
           <ThemeProvider
